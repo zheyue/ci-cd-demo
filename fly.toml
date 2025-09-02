@@ -1,0 +1,12 @@
+app = "zheyue-ci-cd-demo"   # ← 改成你的实际应用名（必须全局唯一）
+primary_region = "lax"      # 可换你附近的区域
+
+[build]
+  image = "ghcr.io/zheyue/ci-cd-demo:latest"   # ← 和 workflow 里 IMAGE_NAME 保持一致
+
+[http_service]
+  internal_port = 8080       # 和 Dockerfile 里 uvicorn 端口一致
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 1
