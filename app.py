@@ -12,4 +12,8 @@ def index():
     who = os.getenv("WHO", "world")
     return {"hello": who}
 
+@app.get("/ping")
+def ping():
+    return {"pong":True}
+
 
